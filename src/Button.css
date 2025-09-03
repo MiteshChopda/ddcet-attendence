@@ -1,0 +1,22 @@
+#myButton{
+	
+	--buttonSize: 20px;
+	padding: var(--buttonSize);
+	margin:1rem 0;
+	width:100%;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	background-color: #3b3b3b;
+	border-radius: calc(var(--buttonSize) *0.8);
+	transition: transform 0.1s;
+	
+	&:hover {
+		box-shadow: 0px 0px 10px gray;
+		transform: scale(102%);
+	}
+
+	&:active{
+		transform: scale(calc(var(--buttonSize) * 0.7));
+		transition: transform 0.1s;
+	}
+}
