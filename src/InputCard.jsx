@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import "./Body.css";
+import "./InputCard.css";
 import Button from "./Button.jsx"
 
-export default function Body({heading}) {
+export default function InputCard({heading}) {
 	const [inputValues,setInputValues] = useState([0,""])
 	const handleInput = (event)=>{
 		// prev is array containing noOfHours and DayDescription
