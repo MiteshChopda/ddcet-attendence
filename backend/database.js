@@ -170,5 +170,4 @@ class Database {
 
 // Create singleton instance
 const database = new Database();
-
 export default database;
