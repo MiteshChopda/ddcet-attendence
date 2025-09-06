@@ -1,12 +1,13 @@
 #myButton{
 	
-	--buttonSize: 20px;
-	padding: var(--buttonSize);
-	margin:1rem 0;
-	width:100%;
+	--buttonSize: 16px;
+	padding: var(--buttonSize/2) var(--buttonSize);
+	margin: 0;
+	width:auto;
 	font-family: "Times New Roman", Times, serif;
 	font-weight: bold;
-	background-color: #3b3b3b;
+	color:#242424;
+	background-color: #ffffff;
 	border-radius: calc(var(--buttonSize) *0.8);
 	transition: transform 0.1s;
 	

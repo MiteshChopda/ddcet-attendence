@@ -6,7 +6,7 @@
 	flex-direction: row;
 	/* border: 2px solid black; */
 	border-radius: calc(var(--flexRootSize)*0.4);
-	margin: auto var(--flexRootSize);
+	margin: 0 var(--flexRootSize) 1rem;
 	padding: calc(var(--flexRootSize)/2);
 	justify-content: center;
 	box-shadow:0 0 15px gray;

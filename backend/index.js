@@ -19,9 +19,9 @@ app.post('/add',async (req, res) => {
 	const uuid = crypto.randomUUID();
 
 	const newRecord = {
-         hours: 3.5,
-         content: 'Sample content',
-         date: '2023-12-07',
+         hours: 1,
+         content: 'vh svfuagu adavasbdjb asldjna sdb ab',
+         date: '2023-01-09',
          flag: 'active'
      };
     const recordStatus =  await Database.create(uuid,newRecord);
@@ -30,10 +30,11 @@ app.post('/add',async (req, res) => {
 
 app.get('/records',async (req, res) => {
 	// const allRecords = await database.getAllRecords();
+	console.log("Reqest for records");
   	const allRecords = await Database.getAll();
 	res.send(allRecords);
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
+app.listen(port,'0.0.0.0', () => {
+  console.log(`Example app listening on port ${port}`)
 })

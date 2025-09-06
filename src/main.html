@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Logs in DOM</title>
+  <style>
+    #log-container {
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <h3>Browser Console Logs</h3>
+  <div id="log-container"></div>
+
+  <script>
+    const logContainer = document.getElementById("log-container");
+
+    // Utility function to print logs to DOM
+    function printToDom(type, ...args) {
+      const msg = args.map(a => 
+        typeof a === "object" ? JSON.stringify(a, null, 2) : a
+      ).join(" ");
+      
+      const div = document.createElement("div");
+      div.textContent = `[${type.toUpperCase()}] ${msg}`;
+      
+      // Different colors for different log types
+      if (type === "error") div.style.color = "red";
+      if (type === "warn") div.style.color = "yellow";
+      
+      logContainer.appendChild(div);
+      logContainer.scrollTop = logContainer.scrollHeight;
+    }
+
+    // Override console methods
+    ["log", "warn", "error", "info"].forEach(type => {
+      const original = console[type];
+      console[type] = function(...args) {
+        original.apply(console, args); // still show in DevTools
+        printToDom(type, ...args);     // also print in DOM
+      };
+    });
+
+    // Example usage
+    console.log("Hello, world!");
+    console.warn("This is a warning");
+    console.error("Something went wrong");
+    console.info("Some info here");
+  </script>
+</body>
+</html>

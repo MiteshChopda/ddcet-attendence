@@ -1,10 +1,16 @@
-
+import { useNavigate } from "react-router-dom";
 import "./Button.css"
 
 export default function Button({text}){
-return (
-	<button id="myButton" >
-	{text}
-	</button>	
-)
+	const navigate = useNavigate();
+		function handler(){
+			navigate("/");
+		}
+	return (
+		<button 
+		id="myButton" 
+		onClick={handler}>
+		{text}
+		</button>	
+	)
 }

@@ -48,7 +48,7 @@ export async function initializeDatabase() {
         const connection = await pool.getConnection();
         await connection.execute(createTableQuery);
         connection.release();
-        console.log('Database initialized and table created successfully');
+        console.log('Database initialization complete.');
     } catch (error) {
         console.error('Error initializing database:', error);
         throw error;

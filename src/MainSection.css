@@ -21,7 +21,8 @@
 			margin:0.4rem 0.2rem;
 			border-radius: 0.2rem;
 			background-color:green;
-			user-select:none;			
+			user-select:none;	
+			transition:transform 0.2s ease-in-out;		
 			&:hover{
 				cursor:pointer;
 				transform: scale(1.1);
