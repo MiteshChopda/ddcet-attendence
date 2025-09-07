@@ -1,27 +1,29 @@
 
-.mainForMainSection {	
+/* .mainForMainSection {	
 	margin: 0.5rem 1rem;
 }
-.Calender{
-	background-color:blue;
+.Months{
+	background-color:#242424;
 	padding: 1rem;
 	border-radius: 0.4rem;
-	& .month {
+	box-shadow:0 0 15px gray;
+	& .month{
 		border-radius: 0.4rem;
-		background-color: gray;
 		padding:0.4rem;
+		margin:1rem 0; 
 		& h3{
 			padding:0 0.4rem;
 			border-radius: 0.4rem; 
-			background-color:blue;
+			background-color:#2e2e2e;
+			
 		}
 		& span {
 			display:inline-block;
 			padding:0.3rem;
 			margin:0.4rem 0.2rem;
 			border-radius: 0.2rem;
-			background-color:green;
-			user-select:none;	
+			background-color:#008000;
+			user-select:none;
 			transition:transform 0.2s ease-in-out;		
 			&:hover{
 				cursor:pointer;
@@ -41,4 +43,60 @@
 			
 		}	
 	}
+}
+ 
+*/
+
+/* simplified css */
+
+.mainForMainSection {
+    margin: 0.5rem 1rem;
+}
+
+.Months {
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 15px gray;
+}
+
+.Months .month {
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    margin: 1rem 0;
+}
+
+.Months .month h3 {
+    padding: 0 0.4rem;
+    border-radius: 0.4rem;
+    background-color: #2e2e2e;
+}
+
+.Months .month span {
+    display: inline-block;
+    padding: 0.3rem;
+    margin: 0.4rem 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #008000;
+    user-select: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.Months .month span:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.Months .month span:active {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.Months .month span:not(:hover) {
+    cursor: unset;
+    transform: scale(1);
+}
+
+.Months .month span[r] {
+    background-color: red;
 }

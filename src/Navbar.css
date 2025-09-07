@@ -1,10 +1,8 @@
 
-#myNavbar {
+/* #myNavbar {
 	--flexRootSize: 16px;	
-	/* background-color: whitesmoke; */
 	display: flex;
 	flex-direction: row;
-	/* border: 2px solid black; */
 	border-radius: calc(var(--flexRootSize)*0.4);
 	margin: 0 var(--flexRootSize) 1rem;
 	padding: calc(var(--flexRootSize)/2);
@@ -14,7 +12,6 @@
 	& #partOne {
 			width: 100%;
 			padding:0 var(--flexRootSize) ;
-			/* background-color: rgba(255,0,0,0.2); */
 			display:flex;
 			border-radius: inherit;
 			align-items:center;
@@ -40,7 +37,7 @@
 		
 	& #partTwo {
 			width: 100%;
-			padding:0 var(--flexRootSize);			/* background-color: rgba(0,0,255,0.2); */
+			padding:0 var(--flexRootSize);			
 			display:flex;
 			border-radius: inherit;
 			flex-direction: row-reverse;
@@ -52,6 +49,8 @@
 				margin:0 0.5rem;
 				width:45px;
 				border-radius: 10px;
+				background-color: whitesmoke;
+				transform: scale(0.8);
 				transition: transform 0.05s;
 				&:hover{
 					cursor:pointer;
@@ -62,4 +61,72 @@
 				}
 			}
 		}
+} */
+
+#myNavbar {
+    --flexRootSize: 16px;
+    display: flex;
+    flex-direction: row;
+    border-radius: calc(var(--flexRootSize)*0.4);
+    margin: 0 var(--flexRootSize) 1rem;
+    padding: calc(var(--flexRootSize)/2);
+    justify-content: center;
+    box-shadow: 0 0 15px gray;
+}
+
+#myNavbar #partOne {
+    width: 100%;
+    padding: 0 var(--flexRootSize);
+    display: flex;
+    border-radius: inherit;
+    align-items: center;
+}
+
+#myNavbar #partOne img {
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
+    transition: transform 0.05s;
+}
+
+#myNavbar #partOne img:hover {
+    cursor: pointer;
+}
+
+#myNavbar #partOne img:active {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+#myNavbar #partOne h3 {
+    font-family: monospace;
+    margin: 0 0.5rem;
+}
+
+#myNavbar #partTwo {
+    width: 100%;
+    padding: 0 var(--flexRootSize);
+    display: flex;
+    border-radius: inherit;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#myNavbar #partTwo img {
+    height: 45px;
+    margin: 0 0.5rem;
+    width: 45px;
+    border-radius: 10px;
+	background-color: whitesmoke;
+	transform: scale(0.8);
+    transition: transform 0.05s;
+}
+
+#myNavbar #partTwo img:hover {
+    cursor: pointer;
+}
+
+#myNavbar #partTwo img:active {
+    transform: scale(0.9);
+    cursor: pointer;
 }

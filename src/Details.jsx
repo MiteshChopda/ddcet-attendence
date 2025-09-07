@@ -11,8 +11,9 @@ export default function Details() {
 		<>	
 			<Navbar/>
 			<div className="details">
-			<h3>{new Date(record.created_at).toDateString()}</h3>
-			<p>{record.content}
+			<h3>{new Date(record.created_at).toDateString()} || <p>{record.hours} Hours Studied</p></h3>
+			<p>
+			{record.content}
 			</p>
 			</div>
 		</>

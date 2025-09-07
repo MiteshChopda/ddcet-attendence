@@ -3,18 +3,16 @@ import React, { useState } from 'react';
 import "./InputCard.css";
 import Button from "./Button.jsx"
 
-export default function InputCard({heading}) {
+export default function InputCard({heading,todayStatus}) {
 	const [inputValues,setInputValues] = useState([0,""])
 	const handleInput = (event)=>{
 		// prev is array containing noOfHours and DayDescription
 		// value liek prev=[125,"Today was xyz"]
 		setInputValues(prev=>{
-			// used deep copy because shallow copy was
-			// not working
+			// used deep copy because shallow copy was not working
 			let newArray = structuredClone(prev)
-			console.log(newArray)
 			if(event.target.name == "noOfHours"){
-				newArray[0] = event.target.value
+				newArray[0] = +event.target.value
 			}
 			else if(event.target.name == "dayDescription"){
 				newArray[1] = event.target.value
@@ -24,7 +22,7 @@ export default function InputCard({heading}) {
 	}
 	return(
 	<>
-		<div className="main">
+		<div className="main" style={{display:todayStatus ? "none": "block"}}>
 			<h1>{heading}</h1>
 			<div className="inputField">
 				<label
@@ -52,7 +50,7 @@ export default function InputCard({heading}) {
 					value={inputValues[1]}
 					onChange={handleInput}
 				/>
-				<Button text="Done"/>
+				<Button redirect_to="/home" text="Done" data_to_redirect={inputValues}/>
 			</div>
 		</div>
 	</>
