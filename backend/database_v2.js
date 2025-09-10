@@ -22,22 +22,6 @@ const createTableQuery = `
         date DATETIME NOT NULL,
         flag VARCHAR(10) DEFAULT 'active',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        month VARCHAR(3) GENERATED ALWAYS AS (
-            CASE 
-                WHEN MONTH(created_at) = 1 THEN 'jan'
-                WHEN MONTH(created_at) = 2 THEN 'feb'
-                WHEN MONTH(created_at) = 3 THEN 'mar'
-                WHEN MONTH(created_at) = 4 THEN 'apr'
-                WHEN MONTH(created_at) = 5 THEN 'may'
-                WHEN MONTH(created_at) = 6 THEN 'jun'
-                WHEN MONTH(created_at) = 7 THEN 'jul'
-                WHEN MONTH(created_at) = 8 THEN 'aug'
-                WHEN MONTH(created_at) = 9 THEN 'sep'
-                WHEN MONTH(created_at) = 10 THEN 'oct'
-                WHEN MONTH(created_at) = 11 THEN 'nov'
-                WHEN MONTH(created_at) = 12 THEN 'dec'
-            END
-        ) STORED,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )
 `;

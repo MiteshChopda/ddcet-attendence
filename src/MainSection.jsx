@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import "./MainSection.css";
 
-export default function MainSection({ todayStatus,records }) {
+export default function MainSection({ records }) {
 	console.log("records from MainSelection", records);
 	let dateOnly = new Date().toDateString();
 	let navigate = useNavigate();
@@ -20,7 +20,7 @@ export default function MainSection({ todayStatus,records }) {
 	}
 
 	return (
-		<div className="mainForMainSection" style={{display:todayStatus ? "block": "none"}}>
+		<div className="mainForMainSection">
 			<div className="Months">
 				{months.map(month => (
 					<div className="month" key={month} id={month}>

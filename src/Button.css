@@ -1,4 +1,4 @@
-#myButton{
+.myButton{
 	
 	--buttonSize: 16px;
 	padding: var(--buttonSize/2) var(--buttonSize);

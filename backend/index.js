@@ -37,13 +37,13 @@ app.get('/', async (req, res) => {
 
 app.get('/today', async (req, res) => {
 	// "2005/02/25", "2005/02/27"
-	let text = await Database.getByDateRange(getDate(), getDate());
-	if (text[0]) {
-		console.log("/today if", text);
+	let result = await Database.getByDateRange(getDate(), getDate());
+	if (result[0]) {
+		console.log("/today if", result);
 		res.status(200).json({ message: 'Operation successful!' });
 
 	} else {
-		console.log("/today else", text);
+		console.log("/today else", result);
 		res.status(500);
 
 	}
@@ -51,9 +51,9 @@ app.get('/today', async (req, res) => {
 
 app.post('/add', async (req, res) => {
 	console.log("/add");
-	let text = await Database.getByDateRange(getDate(), getDate());
-	if (text[0]) {
-		res.send("Today's record already exists.")
+	let result = await Database.getByDateRange(getDate(), getDate());
+	if (result[0]) {
+		res.status(696).send("Today's record already exists.")
 		return;
 	}
 	const uuid = crypto.randomUUID();
@@ -69,14 +69,42 @@ app.post('/add', async (req, res) => {
 	console.log(recordStatus);
 	res.send(recordStatus);
 })
+app.post('/update', async (req, res) => {
+	console.log("/update");
+	// data = [0,"sdh","id"]
+	let { data } = req.body;
+	console.log("Post Data: ", data);
+	const newRecord = {
+		hours: data[0],
+		content: data[1],
+	};
+	const recordStatus = await Database.update(data[2], newRecord);
+	console.log(recordStatus);
+	res.send(recordStatus);
+})
 
+app.post('/delete', async (req, res) => {
+	console.log("/delete");
+	// data = "jkasdjkn-adsuh-asdis" (id)
+	let {data}  = req.body;
+	console.log(data);
+	
+	console.log("Post Data: ", data);
+	const recordStatus = await Database.delete(data);
+	console.log(recordStatus);
+	res.send(recordStatus);
+})
+
+let count=0
 app.get('/records', async (req, res) => {
+	
 	console.log("/records");
-
+	
 	// const allRecords = await database.getAllRecords();
 	console.log("Reqest for records");
 	const allRecords = await Database.getAll();
 	console.log(allRecords);
+	console.log("COUNT",++count);
 
 	res.send(allRecords);
 })

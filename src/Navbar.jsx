@@ -2,7 +2,7 @@
 import "./Navbar.css"
 import menubar from "./menubar.png"
 import Button from "./Button.jsx"
-export default function Navbar(){
+export default function Navbar({ButtonName,buttonId}){
 	return (
 		<div id="myNavbar">
 			<div id="partOne">
@@ -12,7 +12,7 @@ export default function Navbar(){
 		<div id="partTwo">
 				<img 
 				src={menubar} />
-				<Button redirect_to="/" text="Home"/>
+				<Button  id={buttonId} text={ButtonName}   />
 			</div>
 		</div>
 	)
