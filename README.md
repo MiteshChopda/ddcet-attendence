@@ -1,12 +1,63 @@
-# React + Vite
+# DDCET-attendence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal attendence and notes taking web application for exam preparation.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have met the following requirements:
+- **MySQL**: (install from https://mysql.com)
+- **Node.js**:(install from https://nodejs.org)
+- **npm**: Usually comes with Node.js
 
-## Expanding the ESLint configuration
+## Installation and Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to set up the development environment:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MiteshChopda/ddcet-attendence
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd ddcet-attendence
+   ```
+
+3. Install root dependencies:
+   ```bash
+   npm i
+   ```
+
+4. Navigate to the backend directory and install its dependencies:
+   ```bash
+   cd backend
+   npm i
+   ```
+
+5. Return to the root directory:
+   ```bash
+   cd ..
+   ```
+
+6. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Configuration
+
+You may need to set up environment variables for database connection and other services. Create a `.env` file in the appropriate directory with the following variables:
+
+```
+DB_HOST=localhost
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_NAME=your_database
+PORT=3000
+```
+
+## Usage
+
+After running `npm run dev`, your application should be available at:
+- Frontend: http://localhost:5173 
+- Backend API: http://localhost:3000 
