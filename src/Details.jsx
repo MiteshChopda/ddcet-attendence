@@ -16,9 +16,13 @@ export default function Details() {
 			<Navbar buttonId="home" ButtonName="home" />
 			<div className="details">
 				<h3>{new Date(record.created_at).toDateString()} || <p>{record.hours} Hours Studied</p></h3>
-				<p>
+			
+					<textarea
+					rows="10"
+					readOnly>
 					{record.content}
-				</p>
+					</textarea>
+			
 				<div className="operations">
 
 					<Button text="Edit" id={"edit"} Data={record} />
