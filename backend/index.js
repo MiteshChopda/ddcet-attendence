@@ -109,6 +109,19 @@ app.get('/records', async (req, res) => {
 	res.send(allRecords);
 })
 
-app.listen(port, '0.0.0.0', () => {
+const server = app.listen(port, '0.0.0.0', () => {
 	console.log(`Example app listening on port ${port}`)
 })
+
+const shutdown = () => {
+  console.log("\nShutting down server...");
+  server.close(async () => {
+    console.log("HTTP server closed.");
+    await Database.closeConnection();
+    console.log("✅ MongoDB connection closed.");
+    process.exit(0);
+  });
+};
+
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);
