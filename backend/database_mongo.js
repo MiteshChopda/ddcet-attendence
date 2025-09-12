@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import dotenv from "dotenv"
+dotenv.config()
 
 // MongoDB connection configuration
 const dbConfig = {
@@ -60,7 +62,7 @@ export async function initializeDatabase() {
     try {
         
         //use this if mongoURI -> await mongoose.connect(mongoURI, {
-        await mongoose.connect("mongodb://localhost:27017/mydatabase", {
+        await mongoose.connect(mongoURI, {
         });
         console.log('MongoDB connection established successfully.');
 
