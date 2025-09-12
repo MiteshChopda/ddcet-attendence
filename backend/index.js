@@ -1,12 +1,14 @@
 import express from "express";
 import cors from "cors";
 import crypto from "crypto";
-import Database, { pool, initializeDatabase } from "./database_v2.js";
+import Database, {initializeDatabase } from "./database_mongo.js";
 
 const app = express()
 const port = 3000
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
+initializeDatabase();
 
 
 
@@ -29,8 +31,6 @@ function getDate() {
 	// return today
 }
 
-app.use(cors());
-initializeDatabase();
 app.get('/', async (req, res) => {
 	res.send("express is up ");
 })
